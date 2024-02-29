@@ -32,17 +32,16 @@ export const update = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-export const deleteById =  async (
-  req:   Request,
+const deleteById = async (
+  req: Request,
   res: Response
 ): Promise<void> => {
   try {
-    const { id } = req.params;
+    const { id }  = req.params;
     await ProfileModel.findByIdAndDelete(id);
     res.status(204).end();
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
-    
   }
-  
+
 };

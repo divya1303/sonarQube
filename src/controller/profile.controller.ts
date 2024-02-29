@@ -20,17 +20,17 @@ export const get = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-export const update = async (req: Request, res: Response): Promise<void> => {
-  try {
-    const { id } = req.params;
-    const profile = await ProfileModel.findByIdAndUpdate(id, req.body, {
-      new: true,
-    });
-    res.status(200).json(profile);
-  } catch (error) {
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-};
+// export const update = async (req: Request, res: Response): Promise<void> => {
+//   try {
+//     const { id } = req.params;
+//     const profile = await ProfileModel.findByIdAndUpdate(id, req.body, {
+//       new: true,
+//     });
+//     res.status(200).json(profile);
+//   } catch (error) {
+//     res.status(500).json({ error: "Internal Server Error" });
+//   }
+// };
 
 const deleteById = async (
   req: Request,
